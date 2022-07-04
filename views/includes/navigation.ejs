@@ -1,4 +1,5 @@
 <div class="backdrop"> </div>
+<a href="/"><img src="/images/airplane.ico" alt="An airplane" height="30px" class="airplane-img"></a>
 <header class="main-header">
     <button id="side-menu-toggle">Menu</button>
     <flight class="main-header__nav">
@@ -15,11 +16,11 @@
             <li class="main-header__item">
                 <a class="<%= path === '/ticket-cancelation' ? 'active' : '' %>" href="/ticket-cancelation">Ticket Cancelation</a>
             </li>
-            <li class="main-header__item">
-                <a class="<%= path === '/admin' ? 'active' : '' %>" href="/admin">Admin-Login
-                </a>
+            <li class="main-header__item" id ="admin-login" id = "admin-login">
+                <a class="<%= path === '/admin' ? 'active' : '' %>" href="/admin">Admin-Login</a>
             </li>
         </ul>
+        
     </flight>
 </header>
 
@@ -42,3 +43,4 @@
                 </li>
             </ul>
 </nav>
+<main>
