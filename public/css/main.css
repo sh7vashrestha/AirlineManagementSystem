@@ -13,7 +13,7 @@ body {
 main {
   padding: 1rem;
   margin: auto;
-  min-height: calc(100vh - 56px - 58.5px);
+  min-height: calc(100vh - 56px - 79.2px);
 }
 
 form {
@@ -225,4 +225,8 @@ footer{
 .end-list li{
   margin: auto;
   color: white;
+}
+.end-paragraph{
+  color: white;
+  margin: 0px;
 }

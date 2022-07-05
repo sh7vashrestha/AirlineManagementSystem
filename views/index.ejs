@@ -1,11 +1,47 @@
 <%- include('includes/head.ejs') %>
+<link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
     <%- include('includes/navigation.ejs') %>
-    <main class="airline description">
-        <div>XYZ Airlines</div>
-        <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam architecto facilis magnam fugit obcaecati esse deserunt tenetur quod facere blanditiis, aut laudantium sint provident molestias eum asperiores. Libero, debitis quisquam?</article>
-    </main>
-
-<%- include('includes/end.ejs') %>
+<header class="py-5 bg-image-full" style="background-image: url('/images/home/Home-background.jpg')">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src="/images/home/LOGO.png" alt="logo" height="150px" width="150px">
+                <h1 class="text-white fs-3 fw-bolder">Nepo Airline</h1>
+                <p class="text-white-50 mb-0">Fly Better</p>
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2>Nepo Airline</h2>
+                        <p class="lead">Industry leading quality in services and Flight comfort.</p>
+                        <p class="mb-0">Nepo Airline has been providing qulity services and flight since 1940 with affordable prices. Nepo air provides both national as well as International flight sevices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('/images/home/Nepal.jpg')">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2>Haven on the Earth<h1>NEPAL</h1></h2>
+                        <p class="lead">Visit different place on Nepal with Nepo airlines and get chance to connect with the nature of Nepal.</p>
+                        <p class="mb-0">You can book the flight to all location of Nepal with Nepo Airline following the link below.</p>
+                        <a href="/ticket-booking">
+                            <button class="Booking">Book!</button>
+                        </a>
+                    </div>
+                
+                </div>
+            </div>
+        </section>  
+    <%- include('includes/end.ejs') %>
