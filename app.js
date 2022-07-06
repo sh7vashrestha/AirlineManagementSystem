@@ -20,8 +20,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Routes imported
 const indexRoutes = require('./routes/home');
+const passengerRoutes = require('./routes/passenger');
 
-app.use('/', indexRoutes);
+
+app.use(indexRoutes);
+app.use(passengerRoutes);
 app.use(errorController.get404);
 
 app.listen(5000, () =>{
