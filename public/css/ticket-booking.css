@@ -40,25 +40,30 @@ input{
     padding: .5em;
     border: solid 1px red;
     width: 100%;
+    color: white;
 }
 select{
     padding: 5px;
     margin-top: 5px ;
     border: solid 2px gold;
     cursor: pointer;
-    background: paleturquoise;
+    background: #03a79e;
     width: 100%;
+    color: white;
 }
 input{
-    background-color: paleturquoise;
+    background-color: #03a79e;
+    padding: 5px;
+    margin-top: 5px ;
+    border: solid 2px gold;
 }
 
-#search{
+.search{
     display: flex;
     justify-content: center;
-    background-color: paleturquoise; /* Green */
+    background-color: #03a79e; /* Green */
   border: none;
-  color: black;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -67,16 +72,16 @@ input{
 }
 
 
-#search:disabled {
+.search:disabled {
   pointer-events: none;
 }
 
-#search:hover {
+.search:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
 
-#search:active {
+.search:active {
   box-shadow: none;
   transform: translateY(0);
 }

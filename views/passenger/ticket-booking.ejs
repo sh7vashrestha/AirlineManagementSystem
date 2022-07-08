@@ -48,13 +48,13 @@
         <th>
         <div class="form-control">
             <label for="Departure-Date">Departure-Date</label>
-            <input type="date" name="Departure-Date" id="dep-date" required>
+            <input type="date" name="Departure-Date" id="depDate" required>
         </div>
         </th>
         <th>
         <div class="form-control">
             <label for="people_number">Number of people</label>
-            <select name="people_number" id="t_quantity" required>
+            <select name="people_number" id="Quantity" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -67,7 +67,7 @@
     <tr><th>
         <div class="form-control">
             <label for="seat_type">Type of seat</label>
-            <select name="seat_type" id="seat_type" required>
+            <select name="seat_type" id="seatType" required>
                     <option value="E">Economy</option>
                     <option value="B">Business-Class</option>
                     <option value="F">First-Class</option>
@@ -77,9 +77,10 @@
     </tr>
     </table>
         <br>
-        <button  id="search" type="submit">Search</button>
+        <button  class="search" type="submit">Search</button>
     </fieldset>
     </form>
+    
     <script src="/js/ticket-booking.js"></script>
 
 <%- include('../includes/end.ejs') %>

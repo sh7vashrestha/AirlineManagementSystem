@@ -14,5 +14,5 @@ let today = new Date();
         } 
         today = yyyy+'-'+mm+'-'+dd;
         max_day = yyyy+'-'+mm+'-'+max_dd;
-        document.getElementById("dep-date").setAttribute("min", today);
-        document.getElementById("dep-date").setAttribute("max", max_day);
+        document.getElementById("depDate").setAttribute("min", today);
+        document.getElementById("depDate").setAttribute("max", max_day);

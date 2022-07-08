@@ -4,6 +4,7 @@ exports.ticketBooking = (req, res, next) => {
   };
 
   exports.ticketCancelation = (req, res, next) => {
+   
     res.render('passenger/ticket-cancelation', { pageTitle: 'Ticket-Cancelation', 
     path: '/ticket-cancelation' });
   };
