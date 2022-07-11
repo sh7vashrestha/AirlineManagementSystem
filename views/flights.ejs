@@ -3,6 +3,23 @@
 
 <body>
     <%- include('./includes/navigation.ejs') %>
-    <h1>Flights</h1>
-
+    <table>
+    <% if (f_info.length > 0) { %>
+        <tr>
+            <th>Flight-Id</th>
+            <th>Flight-status</th>
+            <th>Flight-capacity</th>
+        </tr>
+        
+        <% for (let f of f_info) { %>
+            <tr>
+            <th><h5> <%= f.f_id %></h5></th>
+            <th><h5> <%= f.f_status %></h5></th>
+            <th><h5> <%= f.f_capacity %></h5></th>
+            </tr>
+            <% } %>
+            <% } else { %>
+                <h1>No Flight Found!</h1>
+                <% } %>
+    </table>
 <%- include('./includes/end.ejs') %>

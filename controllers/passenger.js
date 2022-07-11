@@ -1,4 +1,7 @@
+
+
 exports.ticketBooking = (req, res, next) => {
+  console.log(req.body.random);
     res.render('passenger/ticket-booking', { pageTitle: 'Ticket-Booking', 
     path: '/ticket-booking' });
   };
