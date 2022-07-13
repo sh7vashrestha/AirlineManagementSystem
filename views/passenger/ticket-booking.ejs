@@ -5,7 +5,7 @@
 <body>
     <%- include('../includes/navigation.ejs') %>
         
-    <form class="ticket-form" action="/" method="POST">
+    <form class="ticket-form" action="/ticket-booking" method="POST">
         <fieldset>
         <legend> Ticket-Booking </legend>
         <table>
@@ -75,14 +75,10 @@
         </th>
     </tr>
     </table>
-    <div class="form-control">
-        <label for="imageUrl">Image URL</label>
-        <input type="text" name="imageUrl" id="imageUrl">
-    </div>
         <button  class="search" type="submit">Search</button>
     </fieldset>
     </form>
-    
+    <!-- for max date -->
     <script src="/js/ticket-booking.js"></script>
 
 <%- include('../includes/end.ejs') %>

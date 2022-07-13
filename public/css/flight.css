@@ -1,0 +1,8 @@
+.flight{
+    display: block;
+    height: auto;
+    width: auto;
+    margin: auto;
+    padding: 25px;
+    border: 0.5px
+}

@@ -1,0 +1,35 @@
+<%- include('./includes/head.ejs') %>
+<link rel="stylesheet" href="css/flight.css">
+</head>
+
+<body>
+    <%- include('./includes/navigation.ejs') %>
+    <table class="flight">
+    <% if (f_info.length > 0) { %>
+        <tr>
+            <th>Flight-Id</th>
+            <th>Flight-status</th>
+            <th>Flight-capacity</th>
+            <th>Start-Location</th>
+            <th>Destination-Location</th>
+            <th>Date</th>
+            <th>Time</th>
+
+        </tr>
+        
+        <% for (let f of f_info) { %>
+            <tr>
+            <th> <%= f.f_id %></th>
+            <th> <%= f.f_status %></th>
+            <th> <%= f.f_capacity %></th>
+            <th> <%= f.start_location %></th>
+            <th> <%= f.destination %></th>
+            <th> <%= f.date %></th>
+            <th> <%= f.time %></th>
+            </tr>
+            <% } %>
+            <% } else { %>
+                <h1>No Flight Found!</h1>
+                <% } %>
+    </table>
+<%- include('./includes/end.ejs') %>
