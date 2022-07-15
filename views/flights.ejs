@@ -1,37 +1,46 @@
 <%- include('./includes/head.ejs') %>
-<link rel="stylesheet" href="css/flight.css">
+<link rel="stylesheet" href="/css/flight.css">
 </head>
 
 <body>
     <%- include('./includes/navigation.ejs') %>
-    <table class="flight">
+    <table class="content-table">
     <% if (f_info.length > 0) { %>
+    <thead>
         <tr>
             <th>Flight-Id</th>
-            <th>Flight-status</th>
-            <th>Flight-capacity</th>
-            <th>Route-ID</th>
             <th>Start-Location</th>
             <th>Destination-Location</th>
-            <th>Date</th>
-            <th>Time</th>
+            <th> &emsp; Date &emsp; </th>
+            <th> &emsp; Time &emsp;</th>
+            <th>Empty-Seats</th>
+            <th>Book</th>
 
         </tr>
+    </thead>
+    <tbody>
         
         <% for (let f of f_info) { %>
+            
             <tr>
-            <th> <%= f.f_id %></th>
-            <th> <%= f.f_status %></th>
-            <th> <%= f.f_capacity %></th>
-            <th> <%= f.r_id %></th>
-            <th> <%= f.start_location %></th>
-            <th> <%= f.destination %></th>
-            <th> <%= f.date %></th>
-            <th> <%= f.time %></th>
+            <td> <%= f.f_id %></td>
+            <td> <%= f.origin %></td>
+            <td> <%= f.destination %></td>
+            <td> <%= f.date %></td>
+            <td> <%= f.time %></td>
+            <td> <%= f.empty_seats %></td>
+            
+            <td> <a href="/flight-book?id=<%= f.f_id %>"" >
+                Select
+
+            </a></td>
+            
             </tr>
+    </tbody>
             <% } %>
             <% } else { %>
                 <h1>No Flight Found!</h1>
                 <% } %>
+    
     </table>
 <%- include('./includes/end.ejs') %>

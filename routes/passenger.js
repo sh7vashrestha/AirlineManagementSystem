@@ -7,7 +7,10 @@ const passengerController = require('../controllers/passenger');
 const router = express.Router();
 //exporting controllers
 router.get('/ticket-booking', passengerController.getTicketBooking);
-router.post('/ticket-booking', passengerController.postTicketBooking);
+
+router.get('/flight-search', passengerController.getFlightSearch);
+
+router.get('/flight-book', passengerController.getFlightBook);
 
 router.get('/ticket-cancelation', passengerController.getTicketCancelation);
 

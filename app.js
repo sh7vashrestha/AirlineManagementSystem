@@ -1,5 +1,4 @@
 const path = require('path');
-const mysql=require('mysql');
 
 //for express
 const express = require('express');
