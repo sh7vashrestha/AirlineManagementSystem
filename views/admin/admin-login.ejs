@@ -4,6 +4,7 @@
 
 <body>
     <%- include('../includes/navigation.ejs') %>
+    
 
 <div class="wrapper fadeInDown">
   <div id="formContent">
@@ -13,9 +14,14 @@
 
     <!-- Login Form -->
     <form action="/admin-info" method="POST">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="User-ID">
-      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
-      <button class="fadeIn second">Log-In</button>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="User-ID" required>
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" required>
+      <button class="fadeIn fourth">Log-In</button>
+      <% if(Message!=""){ %>
+        <div class="alert-danger" role="alert">
+          <strong>WRONG INFO!!</strong> Please Re-Enter your info.
+        </div>
+        <% } %>
     </form>
 
     <!-- Remind Passowrd -->

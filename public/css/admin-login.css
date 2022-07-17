@@ -267,3 +267,12 @@ main {
   margin: auto;
   min-height: calc(100vh - 56px - 72.8px);
 }
+
+.alert-danger{
+  display: block;
+  justify-content: center ;
+  background-color: lightcoral;
+  align-items: center;
+  max-width: 80%;
+  margin: auto;
+}
