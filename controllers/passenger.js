@@ -22,7 +22,8 @@ exports.getFlightSearch = (req, res, next) => {
 
 exports.getFlightBook = (req, res, next) => {
     const f_id = req.query.id;
-    flight.fetchFlightSeatinfo()
+    console.log(f_id);
+    flight.fetchFlightSeatinfo(f_id)
     .then(()=>{
     res.render('passenger/flight-book',
      { pageTitle: 'Ticket-Book', 

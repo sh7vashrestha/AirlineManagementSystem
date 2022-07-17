@@ -8,4 +8,6 @@ const router = express.Router();
 
 router.get('/admin', adminController.getAdminLogin);
 
+router.post('/admin-info', adminController.postAdminLoginInfo);
+
 module.exports = router;

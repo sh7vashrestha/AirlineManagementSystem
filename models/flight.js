@@ -9,6 +9,6 @@ module.exports = class flight{
     }
     static fetchFlightSeatinfo(id)
     {
-        return db.execute("SELECT * FROM FLIGHT NATURAL JOIN SEAT F_ID = "+id);
+        return db.execute("SELECT * FROM FLIGHT NATURAL JOIN SEAT WHERE F_ID="+id);
     }
 }
