@@ -23,8 +23,8 @@ const adminRoutes = require('./routes/admin');
 
 //Using Routes
 app.use(indexRoutes);
-app.use(adminRoutes);
-app.use(passengerRoutes);
+app.use( adminRoutes);
+app.use( passengerRoutes);
 app.use(errorController.get404);
 
 app.listen(5000, () =>{

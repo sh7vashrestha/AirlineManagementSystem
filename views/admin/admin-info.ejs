@@ -1,0 +1,29 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/admin-nav.css">
+ <style>
+    main{
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
+        background-image: url(../images/ticket-booking-bg.jpg);
+        font-size: large;
+        font-family: Monospace;
+        
+    }
+    h1{
+        color: aliceblue;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+    }
+ </style>
+</head>
+
+<body>
+    <%- include('../includes/navigation-admin.ejs') %>
+    <h1>WELCOME! MR. <%= userName%> into admin panel of Nepo Airline.</h1>
+   
+
+<%- include('../includes/end.ejs') %>

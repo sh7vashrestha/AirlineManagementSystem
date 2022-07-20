@@ -1,0 +1,13 @@
+.adminxyzabv button{
+    background:none; 
+    border:none; 
+    border-radius: 10px;
+    font-size: large;
+    color: white;
+    padding: 10px;
+    transition: background-color 0.52s ease-out 100ms
+}
+.adminxyzabv button:hover{
+    cursor: pointer;
+    background-color: #069080;
+}

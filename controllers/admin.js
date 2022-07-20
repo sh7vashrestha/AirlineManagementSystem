@@ -10,11 +10,23 @@ exports.postAdminLoginInfo = (req, res, next) => {
     .then(([rows, fieldData])=>{
         for (let i = 0; i < rows.length; i++) {
             if(id == rows[i].admin_id && password == rows[i].password){
-                res.send("Success-Login");
+                res.render('admin/admin-info', { pageTitle: 'LOG-IN',
+                path: '/admin',
+                userName: rows[i].admin_id});
             };
         }
         res.render('admin/admin-login', { pageTitle: 'LOG-IN',
         path: '/admin', Message:"Wrong Password"});
     });
     
+};
+
+exports.postAdminFlight = (req, res, next) => {
+    adminAuth.fetchFlightInfo()
+    .then(([rows, fieldData]) =>{
+      res.render('admin/admin-flight', {
+         pageTitle: 'Flight',
+         f_info : rows,
+         path: '/admin-flight' });
+    });
 };
