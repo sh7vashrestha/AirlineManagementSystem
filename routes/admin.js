@@ -9,6 +9,9 @@ const router = express.Router();
 router.get('/admin', adminController.getAdminLogin);
 
 router.post('/admin-info', adminController.postAdminLoginInfo);
+
 router.post('/admin-flight', adminController.postAdminFlight);
+
+router.post('/admin-edit', adminController.postEditFlight);
 
 module.exports = router;

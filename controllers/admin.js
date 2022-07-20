@@ -30,3 +30,13 @@ exports.postAdminFlight = (req, res, next) => {
          path: '/admin-flight' });
     });
 };
+exports.postEditFlight = (req, res, next) => {
+    adminAuth.fetchFlight(req.body.f_id)
+    .then(([rows, fieldData])=>{
+            res.render('admin/admin-flight', {
+                pageTitle: 'Edit',
+                f_info : rows,
+                path: '/admin-flight' })
+    });
+    
+};

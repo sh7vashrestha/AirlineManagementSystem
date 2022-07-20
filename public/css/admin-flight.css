@@ -2,7 +2,7 @@
     display: block;
 	border-collapse: collapse;
 	margin: 25px auto;
-	max-width: 1003.85px;
+	max-width: 1210px;
 	border-radius: 10px 10px 10px 10px;
 	overflow: hidden;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0, 15);
@@ -12,19 +12,20 @@
 	.content-table thead tr {
 		background-color: #2fba2f;
 		color: #ffffff;
-		text-align: left;
-		font-weight: bold;
-        font-size: 0.465cm;
+		text-align: center;
+        font-size: 0.4985cm;
 
 	}
 	.content-table th,
 	content-table td{
-		padding: 12px 10px;
+		padding: 15px 10px;
+		
 	}
-
 	.content-table tbody tr {
-		border-bottom: 1px solid #dddddd;
+		border-bottom: 2px solid #dddddd;
+		text-align: center;
 
+		
 	}
 
 	.content-table tbody tr:nth-of-type(even){
@@ -33,4 +34,10 @@
 	}
 	.content-table tbody tr:last-of-type{
 		border-bottom: 2px solid #009879;
+	}
+	.content-table a {
+		cursor: pointer;
+		color: #2fba2f;
+		font-size: large;
+		font-weight: bolder;
 	}
