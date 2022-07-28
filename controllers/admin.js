@@ -31,10 +31,27 @@ exports.postAdminFlight = (req, res, next) => {
     });
 };
 exports.postEditFlight = (req, res, next) => {
+    
     adminAuth.fetchFlight(req.body.f_id)
     .then(([rows, fieldData])=>{
-            res.render('admin/admin-flight', {
+        console.log(rows);
+            res.render('admin/admin-edit', {
                 pageTitle: 'Edit',
+                f : rows[0],
+                path: '/admin-flight' })
+    });
+    
+};
+exports.postEditedInfo = (req, res, next) => {
+    const s = req.body.status;
+    const o = req.body.origin;
+    const d = req.body.destination;
+    const date = req.body.depDate;
+    const time = req.body.depTime;
+    adminAuth.edited(req.body.f_id, s, o, d, date, time)
+    .then(([rows, fieldData])=>{
+            res.render('admin/admin-flight', {
+                pageTitle: 'Info',
                 f_info : rows,
                 path: '/admin-flight' })
     });

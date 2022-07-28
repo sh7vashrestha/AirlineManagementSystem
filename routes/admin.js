@@ -14,4 +14,6 @@ router.post('/admin-flight', adminController.postAdminFlight);
 
 router.post('/admin-edit', adminController.postEditFlight);
 
+router.post('/admin-edited', adminController.postEditedInfo);
+
 module.exports = router;
