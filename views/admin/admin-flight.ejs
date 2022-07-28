@@ -60,7 +60,8 @@
                 </td>
                 <td> 
                     <form action="/admin-delete" method="POST">
-                        <button name="id" type="submit" value="<%= f.f_id%>">Select</button>
+                        <input type="hidden" name="f_id" value="<%= f.f_id %>">
+                        <button>Select</button>
                     </form>
                 </td>
                 

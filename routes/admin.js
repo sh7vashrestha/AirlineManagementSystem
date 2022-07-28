@@ -16,4 +16,6 @@ router.post('/admin-edit', adminController.postEditFlight);
 
 router.post('/admin-edited', adminController.postEditedInfo);
 
+router.post('/admin-delete', adminController.deleteFlight);
+
 module.exports = router;

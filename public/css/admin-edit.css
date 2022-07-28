@@ -1,0 +1,91 @@
+
+
+main{
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/ticket-booking-bg.jpg);
+    font-size: large;
+    font-family: Monospace;
+    
+}
+.ticket-form{
+    display: block;
+    max-height: 300px;
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/home/Home-background.jpg);
+}
+table{
+    width: 100%;
+}
+tr{
+    width: 100%;
+
+}
+th{
+    width: auto;
+}
+legend{
+    color: rgb(240, 249, 255);
+}
+label{
+    display: block;
+    margin-top: 1em;
+    color: aliceblue;
+}
+input{
+    padding: .5em;
+    border: solid 1px red;
+    width: 100%;
+    color: white;
+}
+select{
+    padding: 5px;
+    margin-top: 5px ;
+    border: solid 2px gold;
+    cursor: pointer;
+    background: #03a79e;
+    width: 100%;
+    color: white;
+}
+input{
+    background-color: #03a79e;
+    padding: 5px;
+    margin-top: 5px ;
+    border: solid 2px gold;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    background-color: #03a79e; /* Green */
+     border: none;
+     color: white;
+    padding: 15px 32px;
+    text-align: center;
+     text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.search:disabled {
+  pointer-events: none;
+}
+
+.search:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.search:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
