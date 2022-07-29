@@ -1,4 +1,5 @@
 const flight = require('../models/flight');
+const passenger = require('../models/passenger');
 exports.getTicketBooking = (req, res, next) => {
     res.render('passenger/flight-search', { pageTitle: 'Ticket-Booking', 
     path: '/ticket-booking' });
@@ -22,15 +23,25 @@ exports.getFlightSearch = (req, res, next) => {
 
 exports.getFlightBook = (req, res, next) => {
     const f_id = req.query.id;
-    console.log(f_id);
     flight.fetchFlightSeatinfo(f_id)
-    .then(()=>{
+    .then(([rows, fieldData])=>{
     res.render('passenger/flight-book',
      { pageTitle: 'Ticket-Book', 
-    path: '/ticket-cancelation' });
+      s_info: rows,
+      f: f_id,
+      path: '/ticket-booking' });
      });
   };
 exports.getTicketCancelation = (req, res, next) => {
     res.render('passenger/ticket-cancelation', { pageTitle: 'Ticket-Cancelation', 
     path: '/ticket-cancelation' });
+  };
+exports.getSeatInfo = (req, res, next) => {
+    const a= req.query;
+    passenger.passengerInfo(a)
+    .then(([rows, fieldData])=>{
+      res.render('passenger/ticket-cancelation', { pageTitle: 'Ticket-Cancelation', 
+    path: '/ticket-cancelation' });
+    });
+    
   };
