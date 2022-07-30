@@ -32,16 +32,25 @@ exports.getFlightBook = (req, res, next) => {
       path: '/ticket-booking' });
      });
   };
+
+
 exports.getTicketCancelation = (req, res, next) => {
     res.render('passenger/ticket-cancelation', { pageTitle: 'Ticket-Cancelation', 
     path: '/ticket-cancelation' });
   };
+
+
 exports.getSeatInfo = (req, res, next) => {
     const a= req.query;
-    passenger.passengerInfo(a)
+    passenger.passengerInfoUpdate(a);
+    setTimeout(() => {
+      passenger.getpID(a)
     .then(([rows, fieldData])=>{
+      console.log(rows);
       res.render('passenger/ticket-cancelation', { pageTitle: 'Ticket-Cancelation', 
     path: '/ticket-cancelation' });
     });
+    }, 700);
+    
     
   };
