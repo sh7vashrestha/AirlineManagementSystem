@@ -1,22 +1,15 @@
 <%- include('../includes/head.ejs') %>
 <link rel="stylesheet" href="/css/flight.css">
 <link rel="stylesheet" href="/css/passengerInfo.css">
-<style>
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-</style>
 </head>
 
 <body>
     <%- include('../includes/navigation.ejs') %>
     
-    <div class="flight-container"><strong>Flight Number: <%= f%> </strong><br> Please Enter the correct Information</div>
+    <div class="flight-container"></div>
     <form action="/passengerInfo">
         <fieldset>
-            <legend>Passenger Information</legend>
+            <legend>Please Enter your Payment Info, <%= a.name%></legend>
         <table>
         <tr>
             <td>
@@ -94,10 +87,10 @@
           </select>   
         </div>
         </td>
-        <td> Gold= First class Seat (Rate:<%= fc%>)<br> Red= Business class Seat(Rate:<%= bc%>) <br> Blue= Economy class seat(Rate:<%= ec%>)</td>
+        <td> Gold= First class Seat <br> Red= Business class Seat <br> Blue= Economy class seat</td>
         </tr>       
         </table>
-        <input type="hidden" name="f_id" value="<%= f%>">
+        <input type="hidden" name="pData" value="<%= pData%>">
         <button>Submit</button>
     </form>
 </fieldset>

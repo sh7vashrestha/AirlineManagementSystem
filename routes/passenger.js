@@ -16,4 +16,6 @@ router.get('/ticket-cancelation', passengerController.getTicketCancelation);
 
 router.get('/passengerInfo', passengerController.getSeatInfo);
 
+router.get('/passengerInfo', passengerController.getSeatInfo);
+
 module.exports = router;
