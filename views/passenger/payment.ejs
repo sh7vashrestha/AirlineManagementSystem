@@ -1,96 +1,46 @@
 <%- include('../includes/head.ejs') %>
 <link rel="stylesheet" href="/css/flight.css">
 <link rel="stylesheet" href="/css/passengerInfo.css">
+<style>
+    input:invalid {
+        border: red solid 3px;
+      }
+      input[type=tel]{
+        width: auto;
+      }
+</style>
 </head>
 
 <body>
     <%- include('../includes/navigation.ejs') %>
-    
-    <div class="flight-container"></div>
-    <form action="/passengerInfo">
+    <form action="/confiramtion">
         <fieldset>
-            <legend>Please Enter your Payment Info, <%= a.name%></legend>
+            <legend>Please Enter your Payment Info, <%= pData.name%></legend>
         <table>
         <tr>
             <td>
                 <div class="form-control">
-                    <label for="name">Full Name*</label>
-                    <input type="text" name="name" placeholder="Full Name" required>
-                </div>
-            </td>
-            <td>
-                <div class="form-control">
-                    <label for="dob">Date of birth*</label>
-                    <input type="date" name="dob" required>
-                </div>
-            </td>
-        </tr>
-        </table>
-        <table>
-        <tr><td><b>Location information</b></td></tr>
-        <tr>
-            <td>
-                <div class="form-control">
-                    <label for="state">State*</label>
-                    <input type="input" name="state" placeholder="state" required>
-                </div>
-            </td>
-            <td>
-                <div class="form-control">
-                    <label for="city">City*</label>
-                    <input type="text" name="city" placeholder="City Name" required>
-                </div>
-            </td>
-            <td>
-                <div class="form-control">
-                    <label for="city">Zip-Code</label>
-                    <input type="text" name="zip" placeholder="Zip Code">
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="form-control">
-                    <label for="gender">Gender*</label>
-                    <select name="gender" required>
-                        <option value="M">Male</option>
-                        <option value="F">Female</option>
-                        <option value="O">Others</option>
+                    <label for="name">Card Type</label>
+                    <select type="text" name="c_type" required>
+                        <option value="d">Debit card</option>
+                        <option value="c">Credit card</option>
                     </select>
                 </div>
             </td>
+        </tr>
+        <tr>
             <td>
                 <div class="form-control">
-                    <label for="email">Email*</label>
-                    <input type="email" name="email" placeholder="xyz@email.com" required>
-                </div>
-            </td>
-            <td>
-                <div class="form-control">
-                    <label for="contact">Contact Number*</label>
-                    <input type="number" name="contact" maxlength="10" placeholder="98--------"  required>
+                    <label for="Card-Number">Card Number</label>
+                    <input type="tel" name="cc1" inputmode="numeric" pattern="[0-9\s]{4}" placeholder="xxxx">-
+                    <input type="tel" name="cc2" inputmode="numeric" pattern="[0-9\s]{4}" placeholder="xxxx">-
+                    <input type="tel" name="cc3" inputmode="numeric" pattern="[0-9\s]{4}" placeholder="xxxx">-
+                    <input type="tel" name="cc4" inputmode="numeric" pattern="[0-9\s]{4}" placeholder="xxxx">
                 </div>
             </td>
         </tr>
-        <tr>
-        <td>
-        <div class="form-control">
-            <label for="Seat">Select Seat*</label>
-        <select class="form-select" aria-label="Default select example" name="seat" multiple>
-            <% for (let s of s_info) { %>
-                <% if(s.seat_status!= 'o') { %>
-                    <option class="<%= s.s_type%>">
-                        <%= s.seat_num%>
-                    </option>
-                <%}%>
-            <%}%>
-          </select>   
-        </div>
-        </td>
-        <td> Gold= First class Seat <br> Red= Business class Seat <br> Blue= Economy class seat</td>
-        </tr>       
-        </table>
-        <input type="hidden" name="pData" value="<%= pData%>">
+    </table>
+        <input type="hidden" name="tData" value="<%= pData.t_num%>">
         <button>Submit</button>
     </form>
 </fieldset>

@@ -60,7 +60,11 @@ exports.getTicketCancelation = (req, res, next) => {
 
 exports.getSeatInfo = (req, res, next) => {
     const a= req.query;
-    passenger.passengerInfoUpdate(a);
+    passenger.passengerInfoAdd(a);
+    setTimeout(() => {
+      passenger.TicketInfoAdd(a);
+    }, 50);
+    
     setTimeout(() => {
       passenger.getpID(a)
     .then(([rows, fieldData])=>{
