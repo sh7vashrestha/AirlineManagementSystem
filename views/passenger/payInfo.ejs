@@ -1,0 +1,75 @@
+<%- include('../includes/head.ejs') %>
+<style>
+    table{
+        display: block;
+	    border-collapse: collapse;
+	    margin: 25px auto;
+	    max-width: 310px;
+	    border-radius: 10px 10px 10px 10px;
+	    overflow: hidden;
+	    box-shadow: 0 0 20px rgba(0, 0, 0, 0, 15);
+        height: auto;
+	}
+    td{
+        border-bottom: 2px solid #dddddd;
+		text-align: center;
+        padding: 2px;
+        margin: 2px;
+        }
+    .info{
+        background-color: yellow;
+    }
+</style>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <table>
+        <tr>
+        <td class="first">Pay Number</td>
+        <td class="second"><%= p.p_num%></td>
+        </tr>
+        <tr>
+            <td class="first">Flight ID</td>
+            <td class="second"><%= p.f_id%></td>
+        </tr>
+        <tr>
+            <td  class="first">Passenger ID</td>
+            <td class="second"><%= p.p_id%></td>
+        </tr>
+        <tr>
+            <td  class="first">Name</td>
+            <td class="second"><%= p.name%></td>
+        </tr>
+        <tr>
+            <td class="first">Date Of birth</td>
+            <td class="second"><%= p.dob%></td>
+        </tr>
+        <tr>
+            <td class="first">Email</td>
+            <td class="second"><%= p.email%></td>
+        </tr>
+        <tr>
+            <td class="first">Flight Date</td>
+            <td class="second"><%= p.date%></td>
+        </tr>
+        <tr>
+            <td class="first">Flight Time</td>
+            <td class="second"><%= p.time%></td>
+        </tr>
+        
+        <tr>
+            <td class="first">Total Amount</td>
+            <td class="second"><%= p.amount%></td>
+        </tr>    
+        <tr>
+            <td class="first">Seats</td>
+            <td class="second"><% for(let s of seat) {%>
+            <%= s%> &nbsp
+            <%}%>
+            </td>
+        </tr>
+    </table>
+    <table><tr><td class="info"><strong>Note:</strong> Take Screen Shot of this bill for future Reference.</td></tr></table>
+    
+<%- include('../includes/end.ejs') %>

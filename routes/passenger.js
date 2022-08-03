@@ -16,9 +16,12 @@ router.get('/ticket-cancelation', passengerController.getTicketCancelation);
 
 router.get('/passengerInfo', passengerController.getSeatInfo);
 
-router.get('/confiramtion', (req, res)=>{
-    res.render('passenger/ticket-cancelation', { pageTitle: 'Payment-Info', 
-    path: '/ticket-booking' });
-    });
+router.get('/confiramtion', passengerController.getPaymentInfo);
+
+router.get('/payinfo', passengerController.getPayInfo);
+
+router.get('/deleteData', passengerController.deletePayment);
+
+router.post('/ticketcancel', passengerController.getCancelInfo);
 
 module.exports = router;

@@ -1,0 +1,56 @@
+main{
+    background-repeat: no-repeat;
+background-attachment: scroll;
+background-position: center;
+background-size: cover;
+background-image: url(../images/home/Nepal.jpg);
+font-size: large;
+font-family: Monospace;
+}
+form{
+    display: block;
+max-height: 300px;
+max-width: 800px;
+margin: auto;
+padding: 30px;
+background-image: url(../images/ticket-booking-bg.jpg);
+}
+table{
+    min-width: 500px;
+    max-width: 900px;
+}
+input:invalid {
+    border: darkgoldenrod solid 3px;
+  }
+  .search{
+    display: flex;
+    justify-content: center;
+    background-color: #03a79e; /* Green */
+     border: none;
+     color: white;
+    padding: 15px 32px;
+    text-align: center;
+     text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.search:disabled {
+  pointer-events: none;
+}
+
+.search:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.search:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }

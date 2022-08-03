@@ -72,3 +72,76 @@ exports.postEditedInfo = (req, res, next) => {
     });}, 50);
     
 };
+
+exports.postPassenger = (req, res, next) => {
+    adminAuth.postPassenger()
+    .then(([rows, fieldData]) =>{
+      res.render('admin/admin-passenger', {
+         pageTitle: 'Passenger',
+         p_info : rows,
+         path: '/admin-passenger' });
+    });
+};
+exports.postPassengerInfo = (req, res, next) => {
+    adminAuth.postPassengerInfo(req.body.p_id)
+    .then(([rows, fieldData]) =>{
+        console.log(rows);
+      res.render('admin/passenger-info', {
+         pageTitle: 'Passenger',
+         p : rows,
+         path: '/admin-passenger' });
+    });
+};
+exports.fair = (req, res, next) => {
+    adminAuth.fetchFlightInfo()
+    .then(([rows, fieldData]) =>{
+      res.render('admin/admin-fair', {
+         pageTitle: 'Fair',
+         f_info : rows,
+         path: '/admin-fair' });
+    });
+};
+exports.fairEdit = (req, res, next) => {
+    adminAuth.getFair(req.body.f_id)
+    .then(([rows, fieldData]) =>{
+        var fc = 0;
+        var bc = 0;
+        var ec = 0;
+            for(let s of rows){
+                if(s.s_type =='f'){
+                    fc = s.rate;
+                }
+                else if(s.s_type =='b'){
+                    bc = s.rate;
+                }
+                else if(s.s_type =='e'){
+                    ec = s.rate;
+                }
+        }
+      res.render('admin/fair', {
+         pageTitle: 'Fair_edit',
+         f : fc,
+         b : bc,
+         e : ec,
+         f_id:req.body.f_id,
+         path: '/admin-fair' });
+    });
+};
+exports.fairPost = (req, res, next) => {
+    const f = req.body.frate;
+    const b = req.body.brate;
+    const e = req.body.erate;
+    const f_id = req.body.f_id;
+    adminAuth.fairEdit(f, b, e, f_id)
+    setTimeout(()=>{adminAuth.fetchFlightInfo()
+        .then(([rows, fieldData])=>{
+            adminAuth.fetchFlightInfo()
+            .then(([rows, fieldData]) =>{
+              res.render('admin/admin-fair', {
+                 pageTitle: 'Fair',
+                 f_info : rows,
+                 path: '/admin-fair' });
+            });
+        });}, 50);
+      
+};

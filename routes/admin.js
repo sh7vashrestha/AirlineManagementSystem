@@ -18,4 +18,14 @@ router.post('/admin-edited', adminController.postEditedInfo);
 
 router.post('/admin-delete', adminController.deleteFlight);
 
+router.post('/admin-passenger', adminController.postPassenger);
+
+router.post('/admin-passengerInfo', adminController.postPassengerInfo);
+
+router.post('/admin-fair', adminController.fair);
+
+router.post('/admin-fairEdit', adminController.fairEdit);
+
+router.post('/admin-fairPost', adminController.fairPost);
+
 module.exports = router;

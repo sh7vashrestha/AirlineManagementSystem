@@ -1,0 +1,70 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/admin-nav.css">
+<link rel="stylesheet" href="/css/admin-flight.css">
+<style>
+     button{
+        background:none; 
+        border:none; 
+        border-radius: 10px;
+        font-size: large;
+        color: 069080;
+        padding: 10px;
+        transition: background-color 0.2s ease-out 100ms
+    }
+ button:hover{
+        cursor: pointer;
+        background-color: #069080;
+    }
+    
+</style>
+</head>
+
+<body>
+    <%- include('../includes/navigation-admin.ejs') %>
+    <table class="content-table">
+        <% if (f_info.length > 0) { %>
+        <thead>
+            <tr>
+                <th>Flight-Id</th>
+                <th>Flight-Status</th>
+                <th>Route-ID</th>
+                <th>Start-Location</th>
+                <th>Destination-Location</th>
+                <th> &emsp; Date &emsp; </th>
+                <th> &emsp; Time &emsp;</th>
+                <th>Empty-Seats</th>
+                <th>Edit</th>
+    
+            </tr>
+        </thead>
+        <tbody>
+            
+            <% for (let f of f_info) { %>
+                
+                <tr>
+                <td> <%= f.f_id %></td>
+                <td> <%= f.f_status %></td>
+                <td> <%= f.r_id%></td>
+                <td> <%= f.origin %></td>
+                <td> <%= f.destination %></td>
+                <td> <%= f.date %></td>
+                <td> <%= f.time %></td>
+                <td> <%= f.empty_seats %></td>
+                
+                <td> <form action="/admin-fairedit" method="POST">
+                    <input type="hidden" name="f_id" value="<%= f.f_id %>">
+                    <button>Select</button>
+                </form>
+                    
+                </td>
+                
+                </tr>
+        </tbody>
+                <% } %>
+                <% } else { %>
+                    <h1>No Flight Found!</h1>
+                    <% } %>
+        
+        </table>
+
+<%- include('../includes/end.ejs') %>

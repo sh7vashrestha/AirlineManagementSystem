@@ -11,3 +11,16 @@
     cursor: pointer;
     background-color: #069080;
 }
+.logout{
+    background:none; 
+    border:none; 
+    border-radius: 10px;
+    font-size: large;
+    color: darkorange;
+    padding: 10px;
+    transition: background-color 0.52s ease-out 100ms
+}
+.logout:hover{
+    background-color: red;
+    cursor: pointer;
+}

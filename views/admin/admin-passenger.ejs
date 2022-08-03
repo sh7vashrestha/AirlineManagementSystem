@@ -1,0 +1,71 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/admin-nav.css">
+<link rel="stylesheet" href="/css/admin-flight.css">
+<style>
+    main{
+        width: 840px;
+    }
+     button{
+        background:none; 
+        border:none; 
+        border-radius: 10px;
+        font-size: large;
+        color: 069080;
+        padding: 10px;
+        transition: background-color 0.2s ease-out 100ms
+    }
+ button:hover{
+        cursor: pointer;
+        background-color: #069080;
+    }
+    
+</style>
+</head>
+
+<body>
+    <%- include('../includes/navigation-admin.ejs') %>
+    <table class="content-table">
+        <% if (p_info.length > 0) { %>
+        <thead>
+            <tr>
+                <th>Passenger ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>DOB</th>
+                <th>Email</th>
+                <th>Contact </th>
+                <th>Info</th>
+    
+            </tr>
+        </thead>
+        <tbody>
+            
+            <% for (let p of p_info) { %>
+                
+                <tr>
+                <td> <%= p.p_id %></td>
+                <td> <%= p.name %>&nbsp;&nbsp;</td>
+                <td> <%= p.city %></td>
+                <td> <%= p.dob %></td>
+                <td> 
+                    &nbsp;&nbsp;&nbsp;
+                    <%= p.email %>
+                    &nbsp;&nbsp;&nbsp;
+                </td>
+                <td> <%= p.contact %></td>
+                
+                <td> <form action="/admin-passengerInfo" method="POST">
+                    <input type="hidden" name="p_id" value="<%= p.p_id %>">
+                    <button>Select</button>
+                </form>
+                    
+                </td>
+        </tbody>
+                <% } %>
+                <% } else { %>
+                    <h1>No Passenger Found!</h1>
+                    <% } %>
+        
+        </table>
+
+<%- include('../includes/end.ejs') %>

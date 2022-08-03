@@ -1,0 +1,75 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/admin-nav.css">
+<style>
+    table{
+        display: block;
+	    border-collapse: collapse;
+	    margin: 25px auto;
+	    max-width: 310px;
+	    border-radius: 10px 10px 10px 10px;
+	    overflow: hidden;
+	    box-shadow: 0 0 20px rgba(0, 0, 0, 0, 15);
+        height: auto;
+	}
+    td{
+        border-bottom: 2px solid #dddddd;
+		text-align: center;
+        padding: 2px;
+        margin: 2px;
+        }
+    .info{
+        background-color: yellow;
+    }
+</style>
+</head>
+
+<body>
+    <%- include('../includes/navigation-admin.ejs') %>
+    <% if(p.length>0){%>
+    <table>
+        <tr>
+            <td  class="first">Name</td>
+            <td class="second"><%= p[0].name%></td>
+        </tr>
+        <tr>
+            <td class="first">Date Of birth</td>
+            <td class="second"><%= p[0].dob%></td>
+        </tr>
+        <tr>
+            <td class="first">Contact</td>
+            <td class="second"><%= p[0].contact%></td>
+        </tr>
+        <tr>
+            <td class="first">Email</td>
+            <td class="second"><%= p[0].email%></td>
+        </tr>
+        <tr>
+            <td class="first">State</td>
+            <td class="second"><%= p[0].state%></td>
+        </tr>
+        <tr>
+            <td class="first">Gender</td>
+            <td class="second"><%= p[0].gender%></td>
+        </tr>
+        <tr>
+            <td class="first">City</td>
+            <td class="second"><%= p[0].city%></td>
+        </tr>
+        <tr>
+            <td class="first">Zip-Code</td>
+            <td class="second"><%= p[0].zip%></td>
+        </tr>
+        <tr>
+            <td class="first">Pay-Num</td>
+            <td class="second"><% for(let s of p) {%>
+                <%= s.p_num%> &nbsp;
+                <%}%>
+            </td>
+        </tr>
+        <%} else {%>
+            <h1>No Further Information</h1>    
+        <%}%>
+       
+    </table>
+
+<%- include('../includes/end.ejs') %>

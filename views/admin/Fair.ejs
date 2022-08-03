@@ -1,0 +1,44 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/admin-nav.css">
+<link rel="stylesheet" href="/css/admin-edit.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation-admin.ejs') %>
+        
+    <form class="ticket-form" action="/admin-fairPost" method="POST">
+        <fieldset><legend>Fair Edit </legend>
+        <table>
+        <tr>
+            <th>
+            <div class="form-control">
+                <label for="First Class">Price of First Class</label>
+                <input type="number" name="frate" value="<%= f%>">
+            </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+            <div class="form-control">
+                <label for="Business Class">Price of Business Class</label>
+                <input type="number" name="brate" value="<%= b%>">
+            </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+            <div class="form-control">
+                <label for="First Class">Price of Economy Class</label>
+                <input type="number" name="erate" value="<%= e%>">
+            </div>
+            </th>
+        </tr>
+        
+    </table>
+    <input type="hidden" name="f_id" value="<%= f_id%>">
+        <button  class="search" type="submit">Edit</button>
+    </fieldset>
+    </form>
+
+
+<%- include('../includes/end.ejs') %>

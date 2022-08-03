@@ -1,8 +1,53 @@
 <%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/flight.css">
+<link rel="stylesheet" href="/css/passengerInfo.css">
+<link rel="stylesheet" href="/css/cancel.css">
+<style>
+.info{
+    padding: 20px;
+    background-color: red;
+}
+</style>
 </head>
 
 <body>
     <%- include('../includes/navigation.ejs') %>
-    <h1>Ticket-Cancelation</h1>
+    <form action="/ticketCancel" method="POST">
+    <fieldset>
+        <legend>Ticket-Cancelation</legend>
+    <table>
+    <tr>
+        <td>
+            <div class="form-control">
+                <label for="Pay-Num">Payment Number*</label>
+                <input type="number" name="p_num" placeholder="xxxx" required>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td>
+            <div class="form-control">
+                <label for="dob">Date of birth*</label>
+                <input type="date" name="dob" required>
+            </div>
+        </td>
+        <td>
+            <div class="form-control">
+                <label for="Email">Email*</label>
+                <input type="email" name="email" required>
+            </div>
+        </td>
+    </tr>
+    </table>
+    <button class="search">Submit</button>
+    
+</form>
+</fieldset>
+<% if(info!=undefined){ %>
+    <p class="info">WRONG INFROMATION</p>
+<%}%>
 
 <%- include('../includes/end.ejs') %>

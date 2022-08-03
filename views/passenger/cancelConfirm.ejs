@@ -1,0 +1,101 @@
+<%- include('../includes/head.ejs') %>
+<style>
+    table{
+        display: block;
+	    border-collapse: collapse;
+	    margin: 25px auto;
+	    max-width: 310px;
+	    border-radius: 10px 10px 10px 10px;
+	    overflow: hidden;
+	    box-shadow: 0 0 20px rgba(0, 0, 0, 0, 15);
+        height: auto;
+	}
+    td{
+        border-bottom: 2px solid #dddddd;
+		text-align: center;
+        padding: 2px;
+        margin: 2px;
+    .first{
+        background-color: white;
+    }
+        }
+    .info{
+        background-color: yellow;
+    }
+    .search{
+        display: flex;
+        justify-content: center;
+        background-color:darkgoldenrod; /* Green */
+         border: none;
+         color: white;
+        padding: 15px 32px;
+        text-align: center;
+         text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    
+    .search:disabled {
+      pointer-events: none;
+    }
+    
+    .search:hover {
+      box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+      transform: translateY(-2px);
+    }
+    
+    .search:active {
+      box-shadow: none;
+      transform: translateY(0);
+    }
+</style>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <table>
+        <tr>
+        <td class="first">Pay Number</td>
+        <td class="second"><%= p.p_num%></td>
+        </tr>
+        <tr>
+            <td class="first">Flight ID</td>
+            <td class="second"><%= p.f_id%></td>
+        </tr>
+        <tr>
+            <td  class="first">Passenger ID</td>
+            <td class="second"><%= p.p_id%></td>
+        </tr>
+        <tr>
+            <td  class="first">Name</td>
+            <td class="second"><%= p.name%></td>
+        </tr>
+        <tr>
+            <td class="first">Date Of birth</td>
+            <td class="second"><%= p.dob%></td>
+        </tr>
+        <tr>
+            <td class="first">Email</td>
+            <td class="second"><%= p.email%></td>
+        </tr>
+        
+        <tr>
+            <td class="first">Total Amount</td>
+            <td class="second"><%= p.amount%></td>
+        </tr>    
+        <tr>
+            <td class="first">Seats</td>
+            <td class="second"><% for(let s of seat) {%>
+            <%= s%> &nbsp
+            <%}%>
+        </td>
+        </tr>
+    </table>
+    <table><tr><td class="info"><strong>Note:</strong> Your Ticket is about to get Canceled</td></tr></table>
+    <table><tr><td><form action="/deleteData">
+        <input type="hidden" name="p_num" value="<%= p.p_num%>">
+        <button class="search">Cancel</button>
+    </form></td></tr></table>
+    
+<%- include('../includes/end.ejs') %>

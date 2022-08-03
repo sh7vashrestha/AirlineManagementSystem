@@ -15,7 +15,7 @@
     <%- include('../includes/navigation.ejs') %>
     <form action="/confiramtion">
         <fieldset>
-            <legend>Please Enter your Payment Info, <%= pData.name%></legend>
+            <legend>Please Enter your Payment Info, <%= pData%></legend>
         <table>
         <tr>
             <td>
@@ -40,7 +40,10 @@
             </td>
         </tr>
     </table>
-        <input type="hidden" name="tData" value="<%= pData.t_num%>">
+        <input type="hidden" name="t_num" value="<%= tData%>">
+        <input type="hidden" name="seat" value="<%= seat%>">
+        <input type="hidden" name="f_id" value="<%= f_id%>">
+        <input type="hidden" name="p_id" value="<%= p_id%>">
         <button>Submit</button>
     </form>
 </fieldset>
