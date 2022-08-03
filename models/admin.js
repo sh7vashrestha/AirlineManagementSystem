@@ -1,4 +1,3 @@
-const { INSERT } = require('sequelize/types/query-types');
 const db = require('../util/database');
 
 module.exports = class adminAuth{
@@ -44,6 +43,20 @@ module.exports = class adminAuth{
         });
     }
     static flightAdd(a){
-        db.query(`UPDATE seat SET rate=${f} WHERE s_type ='f'`);
+        const r = parseInt(a.f_id)*10;
+        db.query(`INSERT INTO flight VALUES(${a.f_id},'${a.status}', 12, 12)`);
+        db.query(`INSERT INTO route VALUES(${a.f_id},${r}, '${a.origin}', '${a.destination}', '${a.depDate}', '${a.depTime}')`);
+        db.query(`INSERT INTO seat VALUES(${r+1}, ${a.f_id}, 'u', 'f', 5000);`);
+        db.query(`INSERT INTO seat VALUES(${r+2}, ${a.f_id}, 'u', 'f', 5000);`);
+        db.query(`INSERT INTO seat VALUES(${r+3}, ${a.f_id}, 'u', 'f', 5000);`);
+        db.query(`INSERT INTO seat VALUES(${r+4}, ${a.f_id}, 'u', 'f', 5000);`);
+        db.query(`INSERT INTO seat VALUES(${r+5}, ${a.f_id}, 'u', 'b', 4000);`);
+        db.query(`INSERT INTO seat VALUES(${r+6}, ${a.f_id}, 'u', 'b', 4000);`);
+        db.query(`INSERT INTO seat VALUES(${r+7}, ${a.f_id}, 'u', 'b', 4000);`);
+        db.query(`INSERT INTO seat VALUES(${r+8}, ${a.f_id}, 'u', 'b', 4000);`);
+        db.query(`INSERT INTO seat VALUES(${r+9}, ${a.f_id}, 'u', 'e', 3000);`);
+        db.query(`INSERT INTO seat VALUES(${r+10}, ${a.f_id}, 'u', 'e', 3000);`);
+        db.query(`INSERT INTO seat VALUES(${r+11}, ${a.f_id}, 'u', 'e', 3000);`);
+        db.query(`INSERT INTO seat VALUES(${r+12}, ${a.f_id}, 'u', 'e', 3000);`);
     }
 }

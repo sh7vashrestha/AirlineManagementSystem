@@ -153,6 +153,10 @@ exports.flightAdd = (req, res, next) => {
 };
 exports.flightAdded = (req, res, next) => {
     const a= req.body;
-    console.log(a);
-      
+    adminAuth.flightAdd(a);
+    setTimeout(() => {
+        res.render('admin/admin-tadd', {
+            pageTitle: 'Flight-Add',
+            path: '/admin-flight' })
+    }, 500);
 };
