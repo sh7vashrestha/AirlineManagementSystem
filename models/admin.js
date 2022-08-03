@@ -1,3 +1,4 @@
+const { INSERT } = require('sequelize/types/query-types');
 const db = require('../util/database');
 
 module.exports = class adminAuth{
@@ -41,5 +42,8 @@ module.exports = class adminAuth{
                 }
         }
         });
+    }
+    static flightAdd(a){
+        db.query(`UPDATE seat SET rate=${f} WHERE s_type ='f'`);
     }
 }

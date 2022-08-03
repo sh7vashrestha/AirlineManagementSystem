@@ -6,25 +6,31 @@
 <body>
     <%- include('../includes/navigation-admin.ejs') %>
         
-    <form class="ticket-form" action="/admin-edited" method="POST">
-        <fieldset><legend>Flight Edit </legend>
+    <form class="ticket-form" action="/admin-added" method="POST">
+        <fieldset><legend>Flight ADD </legend>
         <table>
             <tr>
                 <th>
+                    <div class="form-control">
+                        <label for="origin">Flight ID</label>
+                        <input type="text" name="f_id" placeholder="xxx">
+                    </div>
+                    </th>
+                <th>
         <div class="form-control">
-            <label for="status">Flight-Status</label>
+            <label for="status">Flight-status</label>
             <select name="status" id="start_loc" required>
-                <option value="<%= f.f_status %>" selected hidden> Status </option>
                     <option value="active">Active</option>
                     <option value="inactive">Inactive</option>
             </select>
         </div>
-    </th>
+    </th>   
+</tr>
+    <tr>
         <th>
         <div class="form-control">
-            <label for="origin">Origin</label>
+            <label for="origin">Flight ID</label>
             <select name="origin" id="origin">
-                <option value="<%= f.origin %>" selected hidden> <%= f.origin %> </option>
                     <option value="Kathmandu">Kathmandu</option>
                     <option value="Pokhara">Pokhara</option>
                     <option value="Biratnagar">Biratnagar</option>
@@ -36,11 +42,11 @@
             </select>
         </div>
         </th>
+       
         <th>
         <div class="form-control">
             <label for="destination">Destination</label>
             <select name="destination" id="Destination">
-                <option value="<%= f.destination %>" selected hidden> <%= f.destination %> </option>
                     <option value="Kathmandu">Kathmandu</option>
                     <option value="Pokhara">Pokhara</option>
                     <option value="Biratnagar">Biratnagar</option>
@@ -57,20 +63,19 @@
         <th>
         <div class="form-control">
             <label for="Departure-Date">Departure-Date</label>
-            <input type="text" name="depDate" value="<%= f.date %>" required> 
+            <input type="date" name="depDate" id="depDate" required> 
         </div>
         </th>
         <th>
         <div class="form-control">
             <label for="Departure-time">Departure-time</label>
-            <input type="text" name="depTime" value="<%= f.time %>" required>
+            <input type="text" name="depTime" placeholder="xx:xx:xx" required>
         </div>
         </th>
     </tr>
     </table>
-        <input type="hidden" name="f_id" value="<%= f.f_id %>">
-        <button  class="search" type="submit">Edit</button>
+        <button  class="search" type="submit">Add</button>
     </fieldset>
-
+    <script src="/js/ticket-booking.js"></script>
 
 <%- include('../includes/end.ejs') %>

@@ -145,3 +145,14 @@ exports.fairPost = (req, res, next) => {
         });}, 50);
       
 };
+exports.flightAdd = (req, res, next) => {
+    res.render('admin/admin-tadd', {
+        pageTitle: 'Flight-Add',
+        path: '/admin-flight' })
+      
+};
+exports.flightAdded = (req, res, next) => {
+    const a= req.body;
+    console.log(a);
+      
+};

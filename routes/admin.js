@@ -28,4 +28,8 @@ router.post('/admin-fairEdit', adminController.fairEdit);
 
 router.post('/admin-fairPost', adminController.fairPost);
 
+router.post('/admin-fadd', adminController.flightAdd);
+
+router.post('/admin-added', adminController.flightAdded);
+
 module.exports = router;
