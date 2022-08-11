@@ -31,13 +31,13 @@ module.exports = class adminAuth{
         .then(([rows, fieldData])=>{
             for(let s of rows){
                 if(s.s_type =='f'){
-                    db.query(`UPDATE seat SET rate=${f} WHERE s_type ='f'`);
+                    db.query(`UPDATE seat SET rate=${f} WHERE s_type ='f' AND f_id =${f_id}`);
                 }
                 else if(s.s_type == 'b'){
-                    db.query(`UPDATE seat SET rate=${b} WHERE s_type ='b'`);
+                    db.query(`UPDATE seat SET rate=${b} WHERE s_type ='b' AND f_id =${f_id}`);
                 }
                 else if(s.s_type == 'e'){
-                    db.query(`UPDATE seat SET rate=${e} WHERE s_type ='e'`);
+                    db.query(`UPDATE seat SET rate=${e} WHERE s_type ='e' AND f_id =${f_id}`);
                 }
         }
         });
